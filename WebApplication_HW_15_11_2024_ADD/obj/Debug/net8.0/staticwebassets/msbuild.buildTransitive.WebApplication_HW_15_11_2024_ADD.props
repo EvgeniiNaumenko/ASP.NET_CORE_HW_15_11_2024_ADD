@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\WebApplication_HW_15_11_2024_ADD.props" />
+</Project>

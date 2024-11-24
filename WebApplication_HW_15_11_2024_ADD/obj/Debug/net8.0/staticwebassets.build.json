@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "Hash": "Un/Bl7Ix+HgDxRg2in0uzCMdHAcELFOThJvdT9NiFeI=",
+  "Source": "WebApplication_HW_15_11_2024_ADD",
+  "BasePath": "_content/WebApplication_HW_15_11_2024_ADD",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebApplication_HW_15_11_2024_ADD\\wwwroot",
+      "Source": "WebApplication_HW_15_11_2024_ADD",
+      "ContentRoot": "D:\\ЖЕНЯ\\Обучение\\ITStep\\Lesson\\2024\\ASP.NET CORE\\HW_15_11_2024_ADD\\WebApplication_HW_15_11_2024_ADD\\wwwroot\\",
+      "BasePath": "_content/WebApplication_HW_15_11_2024_ADD",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\ЖЕНЯ\\Обучение\\ITStep\\Lesson\\2024\\ASP.NET CORE\\HW_15_11_2024_ADD\\WebApplication_HW_15_11_2024_ADD\\wwwroot\\files\\image1.jpg",
+      "SourceId": "WebApplication_HW_15_11_2024_ADD",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ЖЕНЯ\\Обучение\\ITStep\\Lesson\\2024\\ASP.NET CORE\\HW_15_11_2024_ADD\\WebApplication_HW_15_11_2024_ADD\\wwwroot\\",
+      "BasePath": "_content/WebApplication_HW_15_11_2024_ADD",
+      "RelativePath": "files/image1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\image1.jpg"
+    },
+    {
+      "Identity": "D:\\ЖЕНЯ\\Обучение\\ITStep\\Lesson\\2024\\ASP.NET CORE\\HW_15_11_2024_ADD\\WebApplication_HW_15_11_2024_ADD\\wwwroot\\files\\image2.jpg",
+      "SourceId": "WebApplication_HW_15_11_2024_ADD",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ЖЕНЯ\\Обучение\\ITStep\\Lesson\\2024\\ASP.NET CORE\\HW_15_11_2024_ADD\\WebApplication_HW_15_11_2024_ADD\\wwwroot\\",
+      "BasePath": "_content/WebApplication_HW_15_11_2024_ADD",
+      "RelativePath": "files/image2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\image2.jpg"
+    }
+  ]
+}
