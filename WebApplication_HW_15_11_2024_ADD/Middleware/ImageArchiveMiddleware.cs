@@ -13,55 +13,60 @@ namespace WebApplication_HW_15_11_2024_ADD.Middleware
 
         public async Task InvokeAsync(HttpContext context)
         {
-            var request = context.Request;
-            var response = context.Response;
-
-            if (request.Path == "/download-images" && request.Query.ContainsKey("images"))
+            if (context.Request.Path == "/download-images")
             {
-                var imageNames = request.Query["images"].ToString().Split(',');
+                var imageNames = context.Request.Query["images"].ToString().Split(',');
+                var images = imageNames.Select(name => Path.Combine("wwwroot", "files", name)).ToList();
 
-                var imageFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "files");
-
-                var imagePaths = new List<string>();
-                foreach (var imageName in imageNames)
+                if (images.Any(file => !File.Exists(file)))
                 {
-                    var imagePath = Path.Combine(imageFolder, imageName);
-                    if (File.Exists(imagePath))
-                    {
-                        imagePaths.Add(imagePath);
-                    }
-                }
-
-                if (imagePaths.Count == 0)
-                {
-                    response.StatusCode = 404;
-                    await response.WriteAsync("No valid images found.");
+                    context.Response.StatusCode = 404;
+                    await context.Response.WriteAsync("Some images not found.");
                     return;
                 }
 
-                var tempZipPath = Path.GetTempFileName() + ".zip";
+                var tempFilePath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid()}.zip");
 
-                using (var zipArchive = ZipFile.Open(tempZipPath, ZipArchiveMode.Create))
+                try
                 {
-                    foreach (var imagePath in imagePaths)
+                    using (var zip = ZipFile.Open(tempFilePath, ZipArchiveMode.Create))
                     {
-                        zipArchive.CreateEntryFromFile(imagePath, Path.GetFileName(imagePath));
+                        foreach (var image in images)
+                        {
+                            zip.CreateEntryFromFile(image, Path.GetFileName(image));
+                        }
+                    }
+
+                    context.Response.ContentType = "application/zip";
+                    context.Response.Headers.Add("Content-Disposition", "attachment; filename=images.zip");
+                    await using (var fileStream = new FileStream(tempFilePath, FileMode.Open, FileAccess.Read))
+                    {
+                        await fileStream.CopyToAsync(context.Response.Body);
                     }
                 }
-
-                response.ContentType = "application/zip";
-                response.Headers.Add("Content-Disposition", "attachment; filename=images.zip");
-
-                await using var fileStream = File.OpenRead(tempZipPath);
-                await fileStream.CopyToAsync(response.Body);
-
-                File.Delete(tempZipPath);
-                return;
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = 500;
+                    await context.Response.WriteAsync($"Error occurred: {ex.Message}");
+                }
+                finally
+                {
+                    if (File.Exists(tempFilePath))
+                    {
+                        try
+                        {
+                            File.Delete(tempFilePath);
+                        }
+                        catch {}
+                    }
+                }
             }
-
-
-            await _next(context);
+            else
+            {
+                await _next(context);
+            }
         }
     }
+
 }
 

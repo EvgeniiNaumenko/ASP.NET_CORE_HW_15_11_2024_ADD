@@ -24,3 +24,4 @@ D:\ЖЕНЯ\Обучение\ITStep\Lesson\2024\ASP.NET CORE\HW_15_11_2024_ADD\W
 D:\ЖЕНЯ\Обучение\ITStep\Lesson\2024\ASP.NET CORE\HW_15_11_2024_ADD\WebApplication_HW_15_11_2024_ADD\obj\Debug\net8.0\WebApplication_HW_15_11_2024_ADD.pdb
 D:\ЖЕНЯ\Обучение\ITStep\Lesson\2024\ASP.NET CORE\HW_15_11_2024_ADD\WebApplication_HW_15_11_2024_ADD\obj\Debug\net8.0\WebApplication_HW_15_11_2024_ADD.genruntimeconfig.cache
 D:\ЖЕНЯ\Обучение\ITStep\Lesson\2024\ASP.NET CORE\HW_15_11_2024_ADD\WebApplication_HW_15_11_2024_ADD\obj\Debug\net8.0\ref\WebApplication_HW_15_11_2024_ADD.dll
+D:\ЖЕНЯ\Обучение\ITStep\Lesson\2024\ASP.NET CORE\HW_15_11_2024_ADD\WebApplication_HW_15_11_2024_ADD\obj\Debug\net8.0\WebApplication_HW_15_11_2024_ADD.sourcelink.json
